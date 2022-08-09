@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-configmap
+spec:
+  containers:
+    - name: nginx-configmap
+      image: nginx
+      command: [ "/bin/sh", "-c", "env" ]
+      env:
+         - name: OWNER
+           valueFrom:
+             configMapKeyRef:
+               name: mycm
+               key: owner
+
