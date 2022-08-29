@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-on-node
+spec:
+  containers:
+    - image: nginx
+      name: pod-on-node
+  nodeSelector:
+    disk: ssd
