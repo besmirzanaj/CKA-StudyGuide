@@ -2,20 +2,20 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: nginx
-  name: nginx
+    app: nginx-ingress-test
+  name: nginx-ingress-test
 spec:
   replicas: 6
   selector:
     matchLabels:
-      app: nginx
+      app: nginx-ingress-test
   strategy: {}
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app: nginx
+        app: nginx-ingress-test
     spec:
       containers:
       - image: nginx:1.19.5
-        name: nginx
+        name: nginx-ingress-test

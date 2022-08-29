@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: nginx-ingress-test
+spec:
+  rules:
+    - host: nginx-ingress-test.cloudalbania.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: nginx-ingress-test
+                port:
+                  number: 80
