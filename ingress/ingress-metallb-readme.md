@@ -2,7 +2,7 @@
 deploy kubespray without ingress
 
 
-Get ingress-nginx helm
+Get ingress-nginx helm. https://docs.nginx.com/nginx-ingress-controller/installation/installation-with-helm/
 
 ```
 $ helm repo add nginx-stable https://helm.nginx.com/stable
