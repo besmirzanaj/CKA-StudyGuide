@@ -1,0 +1,22 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: bes-ingress
+  namespace: bes-deploy
+spec:
+  ingressClassName: nginx
+  tls:
+  - hosts:
+    - bes-deploy.cloudalbania.com
+    secretName: bes-secret
+  rules:
+    - host: bes-deploy.cloudalbania.com
+      http:
+        paths:
+          - pathType: Prefix
+            backend:
+              service:
+                name: bes-deploy
+                port:
+                  number: 80
+            path: /
